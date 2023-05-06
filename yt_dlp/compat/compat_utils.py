@@ -78,6 +78,6 @@ def passthrough_module(parent, child, allowed_attributes=(..., ), *, callback=la
         return _NO_ATTRIBUTE
 
     parent = sys.modules.get(parent, types.ModuleType(parent))
-    parent.__class__ = EnhancedModule
+    # parent.__class__ = EnhancedModule
     parent.__getattr__ = __getattr__
     return parent

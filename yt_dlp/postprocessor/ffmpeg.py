@@ -84,7 +84,7 @@ class FFmpegPostProcessorError(PostProcessingError):
 
 
 class FFmpegPostProcessor(PostProcessor):
-    _ffmpeg_location = contextvars.ContextVar('ffmpeg_location', default=None)
+    # _ffmpeg_location = contextvars.ContextVar('ffmpeg_location', default=None)
 
     def __init__(self, downloader=None):
         PostProcessor.__init__(self, downloader)
@@ -105,9 +105,9 @@ class FFmpegPostProcessor(PostProcessor):
     def _determine_executables(self):
         programs = [*self._ffmpeg_to_avconv.keys(), *self._ffmpeg_to_avconv.values()]
 
-        location = self.get_param('ffmpeg_location', self._ffmpeg_location.get())
-        if location is None:
-            return {p: p for p in programs}
+        # location = self.get_param('ffmpeg_location', self._ffmpeg_location.get())
+        # if location is None:
+        return {p: p for p in programs}
 
         if not os.path.exists(location):
             self.report_warning(
