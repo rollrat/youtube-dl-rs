@@ -17,6 +17,7 @@ cd vcpkg
 ./vcpkg.exe install openssl-windows:x64-windows
 ./vcpkg.exe install openssl:x64-windows-static
 ./vcpkg.exe integrate install
+set VCPKGRS_DYNAMIC=1
 ```
 
 ```sh
