@@ -18,8 +18,7 @@ cd vcpkg
 ./vcpkg.exe install openssl:x64-windows-static
 ./vcpkg.exe integrate install
 set VCPKGRS_DYNAMIC=1
-```
+$env:OPENSSL_DIR="G:\Dev2\vcpkg\installed\x64-windows"
 
-```sh
 cargo run --release --features freeze-stdlib,stdlib,ssl .\yt_dlp\__main__.py
 ```
